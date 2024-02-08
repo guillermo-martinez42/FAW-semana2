@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicios</title>
+    <style>
+        #colorSquare {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #882424;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejercicio 1</h1>
+    <input type="number" id="num1" placeholder="Number 1">
+    <input type="number" id="num2" placeholder="Number 2">
+    <button onclick="power()">Sum</button>
+    <h3 id="numX"></h3>
+
+    <h1>Ejercicio 2</h1>
+    <input type="number" id="celsius" placeholder="Celsius">
+    <button onclick="toF()">Convertir</button>
+    <h3 id="fahrenheitResult"></h3>
+
+    <h1>Ejercicio 3</h1>
+    <!-- Placeholder for your specific functionality -->
+
+    <h1>Ejercicio 4</h1>
+    <input type="date" id="dateInput">
+    <button onclick="calcularEdad()">Calcular </button>
+    <h2 id="dateResult"></h2>
+    <h3 id="age"></h3>
+
+    <h1>Ejercicio 5</h1>
+    <input type="text" id="textInput">
+    <button onclick="processText()">Process</button>
+    <!-- Placeholder for result -->
+
+    <h1>Ejercicio 6</h1>
+    <input type="number" id="numberInput">
+    <button onclick="processNumber()">Process</button>
+    <h3 id="numberResult"></h3>
+
+    <h1>Ejercicio 7</h1>
+    <label for="colorInput">Ingresar color en hex(#ff0011):</label>
+    <input type="text" id="colorInput">
+    <button onclick="changeColor()">Cambiar color</button>
+    <div id="colorSquare"></div>
+
+    <script>
+        function power() {
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+            var pow = parseInt(num1) ** parseInt(num2);
+            document.getElementById("numX").innerText = "X = " + pow;
+        }
+
+        function toF() {
+            var celsius = document.getElementById("celsius").value;
+            var fahrenheit = (celsius * 9/5) + 32;
+            document.getElementById("fahrenheitResult").innerText = fahrenheit + " °F";
+        }
+
+
+        function calcularEdad() {
+            var fecha = document.getElementById("dateInput").value;
+            var fecha1 = new Date(fecha);
+            var hoy = new Date();
+            var edad = hoy.getFullYear() - fecha1.getFullYear();
+            document.getElementById("age").innerText = "You selected: " + edad;
+    
+        }
+
+        
+
+        function processNumber() {
+            var number = document.getElementById("numberInput").value;
+            // Add your specific processing logic here
+            document.getElementById("numberResult").innerText = "Processed number: " + number;
+        }
+
+        function changeColor() {
+            var color = document.getElementById("colorInput").value;
+            document.getElementById("colorSquare").style.backgroundColor = color;
+        }
+    </script>
+</body>
+</html>
